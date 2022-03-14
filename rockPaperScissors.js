@@ -17,31 +17,71 @@ function computerPlay(){
 function playRound(playerSelection, computerSelection){
 
     if(playerSelection == "rock" && computerSelection == "Paper"){
-        return "You lose! Paper beats Rock";
+        return "lose";
+        
     }
     else if(playerSelection == "rock" && computerSelection == "Scissors"){
-        return "You Win! Rock beats scissors";
+        return "win";
+        
     }
     else if(playerSelection == "paper" && computerSelection == "Rock"){
-        return "You Win! Paper beats rock";
+        return "win";
+        
     }
     else if(playerSelection == "paper" && computerSelection == "Scissors"){
-        return "You lose! Scissors beats Paper";
+        return "lose";
+        
     }
     else if(playerSelection == "scissors" && computerSelection == "Paper"){
-        return "You Win! Scissors beats Paper";
+        return "win";
+        
     }
     else if(playerSelection == "scissors" && computerSelection == "Rock"){
-        return "You lose! Rock beats Scissors";
+        return "lose";
+        
+    }
+    else if(playerSelection === computerSelection.toLowerCase()){
+        return "tie";
     }
     else{
-        return "It's a tie";
+        return "Invalid input";
     }
+
 }
 
-const computerSelection = computerPlay();
-console.log(computerSelection);
-const playerSelection = window.prompt("Enter your Choice").toLowerCase();
-console.log(playerSelection);
+function game(){
 
-console.log(playRound(playerSelection, computerSelection));
+    let playerScore = 0;
+    let computerScore = 0;
+
+    
+
+    for(let i =0; i<5; i++){
+
+        const computerSelection = computerPlay();
+
+        const playerSelection = window.prompt("Enter your Choice", "rock, paper or scissors").toLowerCase();
+
+        playRound(playerSelection, computerSelection);
+        
+        console.log(playRound(playerSelection, computerSelection));
+
+        if(playRound(playerSelection, computerSelection) == "win"){
+            playerScore += 1;
+        }
+        else if (playRound(playerSelection, computerSelection) == "lose"){
+            computerScore += 1;
+        }       
+   } console.log(playerScore, computerScore);
+
+
+   if(playerScore > computerScore){
+    console.log("You Win!") ;
+    }
+    else if(computerScore > playerScore){
+    console.log("You lose!");
+    }
+    else{
+    console.log("It's a tie");
+    }    
+}
