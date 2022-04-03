@@ -16,35 +16,49 @@ function computerPlay(){
 
 function playRound(playerSelection, computerSelection){
 
+    playerSelection = 'rock';
+    computerSelection = computerPlay();
+
     if(playerSelection == "rock" && computerSelection == "Paper"){
-        return "lose";
+        console.log('lose')//return "lose";
+        console.log("playerSewlection", playerSelection);
+        console.log("computerSelection", computerSelection);
         
     }
     else if(playerSelection == "rock" && computerSelection == "Scissors"){
-        return "win";
+        console.log('win')//return "win";
+        console.log("playerSewlection", playerSelection);
+        console.log("computerSelection", computerSelection);
         
     }
     else if(playerSelection == "paper" && computerSelection == "Rock"){
-        return "win";
+        console.log('win')//return "win";
+        console.log("playerSewlection", playerSelection);
+        console.log("computerSelection", computerSelection);
         
     }
     else if(playerSelection == "paper" && computerSelection == "Scissors"){
-        return "lose";
+        console.log('lose')//return "lose";
+        console.log("playerSewlection", playerSelection);
+        console.log("computerSelection", computerSelection);
         
     }
     else if(playerSelection == "scissors" && computerSelection == "Paper"){
-        return "win";
+        console.log('win')//return "win";
+        console.log("playerSewlection", playerSelection);
+        console.log("computerSelection", computerSelection);
         
     }
     else if(playerSelection == "scissors" && computerSelection == "Rock"){
-        return "lose";
+        console.log('lose')//return "lose";
+        console.log("playerSewlection", playerSelection);
+        console.log("computerSelection", computerSelection);
         
     }
-    else if(playerSelection === computerSelection.toLowerCase()){
-        return "tie";
-    }
-    else{
-        return "Invalid input";
+    else if(playerSelection == computerSelection.toLowerCase()){
+        console.log('tie')//return "tie";
+        console.log("playerSewlection", playerSelection);
+        console.log("computerSelection", computerSelection);
     }
 
 }
@@ -85,3 +99,9 @@ function game(){
     console.log("It's a tie");
     }    
 }
+
+
+
+const rockBtn = document.querySelector('.rock');
+
+rockBtn.addEventListener('click', playRound);
