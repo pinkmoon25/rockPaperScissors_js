@@ -37,22 +37,22 @@ function game(playerSelection){
         case `rock, scissor`:
         case `scissor, paper`:
         case `paper, rock`:
-            result.innerText = `human chose ${playerSelection} & beats ${computerSelection}`;
-            result.style.color = "green";
+            result.innerText = `human chose ${playerSelection} & beats comp's choice ${computerSelection}`;
+            result.style.color = "rgb(36,229,0)";
             return "WIN";
             break;
         case `rock, paper`:
         case `paper, scissor`:
         case `scissor, rock`:
-            result.innerText = `human chose ${playerSelection} & lost to ${computerSelection}`;
-            result.style.color = "red";
+            result.innerText = `human chose ${playerSelection} & lost to comp's choice ${computerSelection}`;
+            result.style.color = "rgb(228,61,64)";
             return "LOSE";
             break;
         case `rock, rock`:
         case `paper, paper`:
         case `scissor, scissor`:
-            result.innerText = `human chose ${playerSelection} & draws with ${computerSelection}`;
-            result.style.color = "grey";
+            result.innerText = `human chose ${playerSelection} & draws with comp's choice ${computerSelection}`;
+            result.style.color = "rgb(134,139,142)";
             return "DRAW";
             break;
     }
