@@ -8,23 +8,24 @@
         <script type="text/javascript" src="rockPaperScissors.js" defer></script>
     </head>
     <body>
+        <header id="header">
+            <h1>
+            <em><span style="color: rgb(138, 138, 138);">Rock</span> 
+            <span style="color:antiquewhite">Paper</span> 
+            <span style="color: rgb(237, 104, 206)">Scissor!</span></em>
+            </h1>
+        </header>
+
         <div id="content">
-            <header id="header">
-                <h1>
-                <em><span style="color: rgb(138, 138, 138);">Rock</span> 
-                <span style="color:antiquewhite">Paper</span> 
-                <span style="color: rgb(237, 104, 206)">Scissors!</span></em>
-                </h1>
-            </header>
+            <div class="score">
+                <p class="humanscore"> Human: <span class="h-runningscore"> 0 </span> </p>
+                <p class="compscore"> Comp: <span class="c-runningscore"> 0 </span> <p>
+            </div>
+
             <div class="buttons">
                 <button class="rock"> Rock </button>
                 <button class="paper">Paper</button>
                 <button class="scissor">Scissor</button>
-            </div>
-
-            <div class="score">
-                <p class="humanscore"> Human: <span class="h-runningscore"> 0 </span> </p>
-                <p class="compscore"> Comp: <span class="c-runningscore"> 0 </span> <p>
             </div>
 
             <div class="result">

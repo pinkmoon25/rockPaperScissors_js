@@ -38,18 +38,21 @@ function game(playerSelection){
         case `scissor, paper`:
         case `paper, rock`:
             result.innerText = `human chose ${playerSelection} & beats ${computerSelection}`;
+            result.style.color = "green";
             return "WIN";
             break;
         case `rock, paper`:
         case `paper, scissor`:
         case `scissor, rock`:
             result.innerText = `human chose ${playerSelection} & lost to ${computerSelection}`;
+            result.style.color = "red";
             return "LOSE";
             break;
         case `rock, rock`:
         case `paper, paper`:
         case `scissor, scissor`:
-            result.innerText = `human chose ${playerSelection} same as ${computerSelection}`;
+            result.innerText = `human chose ${playerSelection} & draws with ${computerSelection}`;
+            result.style.color = "grey";
             return "DRAW";
             break;
     }
@@ -70,7 +73,6 @@ function updatescore(playerSelection){
             compScore.innerText = computerScore;
             break;
         case "DRAW":
-            result.innerText = "It's a Draw";
             break;
     }
 }
@@ -82,7 +84,7 @@ function firsttofive(playerSelection){
     if(playerScore == 5 || computerScore == 5){
 
         if(playerScore > computerScore){
-            result.innertext = "You Win Human!";    
+            result.innerText = "You Win Human!";    
         }
         else if(playerScore < computerScore){
             result.innerText = "You Lost Human!";
