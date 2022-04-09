@@ -4,11 +4,15 @@ body{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    height: 100vh;
+    position:relative;
 }
 
 header{
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 #content{
@@ -22,19 +26,30 @@ h1{
     font-size: 3rem;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
-    text-shadow: 2px 2px 3px whitesmoke;
+    text-shadow: 2px 2px 4px whitesmoke;
     padding: 10px;
+    margin: 10px;
+}
+
+.subtext{
+    color:wheat;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 5px;
 }
 
 .buttons{
-    margin: 30px 8px;
+    margin: 25px 8px;
     display: flex;
     gap: 35px;
+    padding: 15px;
 }
 
 button{
     font-size: 4rem;
-    border: 0px solid whitesmoke; 
+    border: none; 
     padding: 15px;
     transition: 0.3s ease;
 }
@@ -42,7 +57,7 @@ button{
 .rock{
     background-color: rgb(134,139,142);
     border-radius: 50%;
-    box-shadow: 4px 3px 3px 5px rgb(134,139,142);
+    box-shadow: wheat 5px 8px 15px;
 }
 .rock:hover{
     background-color: rgb(36,229,0);
@@ -52,7 +67,7 @@ button{
 .paper{
     background-color:antiquewhite;
     border-radius: 50%;
-    box-shadow: 2px 2px 2px 5px antiquewhite;;
+    box-shadow: wheat 5px 8px 15px;
 }
 .paper:hover{
     background-color: rgb(36,229,0);
@@ -63,8 +78,7 @@ button{
 .scissor{
     background-color: rgb(235,99,160);
     border-radius: 50%;
-    box-shadow: 2px 2px 2px 5px rgb(235,99,160);
-    
+    box-shadow: wheat 5px 8px 15px;
 }
 .scissor:hover{
     background-color: rgb(36,229,0);
@@ -73,9 +87,10 @@ button{
 }
 .score{
     font-size: 2rem;
+    font-family: monospace, Times, serif;
     font-weight: bold;
     font-style: italic;
-    margin: 35px 0px;
+    margin-top: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -85,15 +100,13 @@ button{
 
 .humanscore{
     color: rgb(49,237,49);
-    font-family: cursive, Times, serif;
-    padding: 20px;
+    padding: 10px;
     margin: 10px;
 }
 
 .compscore{
     color: rgb(17,167,187);
-    font-family: monospace, Times, serif;
-    padding: 20px;
+    padding: 10px;
     margin: 10px;
 }
 
@@ -103,26 +116,51 @@ button{
     font-weight: bold;
     font-style: italic;
     text-shadow: 1px 1px 1px whitesmoke;
-    margin-top: 35px;
+    margin: 0px 8px;
 }
 
-.result > p{
-    margin: 5px;
-    padding: 10px;
+a{
+    text-decoration: none;
+    font-size: 2rem;
+    color:black;
 }
+
+.fa-github{
+    transition: 0.3s ease;
+}
+
+.fa-github:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.reload{
+    visibility: hidden;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-style: italic;
+    font-family: cursive, sans-serif;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px;
+    background-color: cadetblue;
+    transition: 0.3s ease;
+}
+
+.reload:hover{
+    transform: scale(1.1);
+}
+
 
 footer{
+    color: wheat;
     font-size: 1.2rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
     font-style: italic;
-    background-color: cadetblue;
-    width: 100%;
-    position: fixed;
+    background-color: rgb(79 79 99 / 28%);
+    position: absolute;
     bottom: 0;
-}
-
-.fa-brands{
-    font-size: 2rem;
-    color: black;
+    width: 100%;
+    margin-top: 10px;
 }
