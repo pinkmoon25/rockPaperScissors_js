@@ -8,6 +8,13 @@ body{
     position:relative;
 }
 
+@media (max-width: 600px){
+    *,body{
+        font-family: Roboto, sans-serif;
+        position: relative;
+    }
+}
+
 header{
     display: flex;
     flex-direction: column;
@@ -163,4 +170,30 @@ footer{
     bottom: 0;
     width: 100%;
     margin-top: 10px;
+}
+
+
+@media (max-width: 600px){
+    body{
+        font-family: Roboto, sans-serif;
+        position: relative;
+        font-size: 1rem;
+    }
+    h1{
+        font-size: 2rem;
+    }
+    button{
+        font-size: 3rem;
+    }
+    .score{
+        font-size:1.5rem;
+    }
+    .result{
+        font-size: 1.3rem;
+    }
+    .reload{
+        font-family: Roboto, sans-serif;
+        font-size: 1.2rem;
+    }
+    
 }
