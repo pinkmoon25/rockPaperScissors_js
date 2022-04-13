@@ -5,14 +5,13 @@ body{
     padding: 0px;
     box-sizing: border-box;
     height: 100vh;
-    position:relative;
 }
 
-@media (max-width: 600px){
-    *,body{
-        font-family: Roboto, sans-serif;
-        position: relative;
-    }
+.page-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: inherit;
 }
 
 header{
@@ -22,7 +21,7 @@ header{
     align-items: center;
 }
 
-#content{
+#main{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -40,7 +39,7 @@ h1{
 
 .subtext{
     color:wheat;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     font-style: italic;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -48,10 +47,24 @@ h1{
 }
 
 .buttons{
-    margin: 25px 8px;
+    margin: 2% auto;
     display: flex;
-    gap: 35px;
-    padding: 15px;
+    flex-wrap:wrap;
+    gap: 10%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.compButtons{
+    display: flex;
+    gap: 20px;
+    padding: 3%;
+}
+.playerButtons{
+    display: flex;
+    gap: 25px;
+    padding: 3%;
 }
 
 button{
@@ -71,6 +84,12 @@ button{
     cursor: pointer;
     transform: scale(1.2);
 }
+
+.comprock{
+    background-color: rgb(134,139,142);
+    border-radius: 50%;
+}
+
 .paper{
     background-color:antiquewhite;
     border-radius: 50%;
@@ -80,6 +99,11 @@ button{
     background-color: rgb(36,229,0);
     cursor: pointer;
     transform: scale(1.2);
+}
+
+.comppaper{
+    background-color:antiquewhite;
+    border-radius: 50%;
 }
 
 .scissor{
@@ -92,34 +116,42 @@ button{
     cursor: pointer;
     transform: scale(1.2);
 }
+
+.compscissor{
+    background-color: rgb(235,99,160);
+    border-radius: 50%;
+}
+
+.compchoice{
+    transition: 0.3s ease;
+    transform: scale(1.1); 
+    background-color: rgb(36,229,0);
+    box-shadow: wheat 5px 8px 15px;
+}
+
 .score{
     font-size: 2rem;
     font-family: monospace, Times, serif;
     font-weight: bold;
     font-style: italic;
-    margin-top: 25px;
+    margin: 25px auto 0px auto;
+    width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+    justify-content: space-evenly;
     text-shadow: 1px 1px 1px darkgray; 
 }
 
 .humanscore{
     color: rgb(49,237,49);
-    padding: 10px;
-    margin: 10px;
 }
 
 .compscore{
     color: rgb(17,167,187);
-    padding: 10px;
-    margin: 10px;
 }
 
 .result{
-    color:antiquewhite;
-    font-size: 2rem;
+    color:floralwhite;
+    font-size: 1.8rem;
     font-weight: bold;
     font-style: italic;
     text-shadow: 1px 1px 1px whitesmoke;
@@ -143,13 +175,13 @@ a{
 
 .reload{
     visibility: hidden;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: bold;
     font-style: italic;
     font-family: cursive, sans-serif;
     border-radius: 10px;
-    padding: 15px;
-    margin: 10px;
+    padding: 10px;
+    margin: auto;
     background-color: cadetblue;
     transition: 0.3s ease;
 }
@@ -161,15 +193,13 @@ a{
 
 footer{
     color: wheat;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
     font-style: italic;
     background-color: rgb(79 79 99 / 28%);
-    position: absolute;
-    bottom: 0;
     width: 100%;
-    margin-top: 10px;
+    margin-top: auto;
 }
 
 
@@ -180,10 +210,10 @@ footer{
         font-size: 1rem;
     }
     h1{
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     button{
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
     .score{
         font-size:1.5rem;
@@ -193,7 +223,6 @@ footer{
     }
     .reload{
         font-family: Roboto, sans-serif;
-        font-size: 1.2rem;
     }
     
 }

@@ -12,40 +12,47 @@
         <script type="text/javascript" src="rockPaperScissors.js" defer></script>
     </head>
     <body>
-        <header id="header">
-            <h1>
-            <em><span style="color: rgb(134,139,142);">Rock</span> 
-            <span style="color:antiquewhite">Paper</span> 
-            <span style="color: rgb(235,99,160)">Scissor!</span></em>
-            </h1>
-            <p class="subtext">First to 5 wins</p>
-        </header>
+        <div class="page-wrapper">
+            <header id="header">
+                <h1>
+                <em><span style="color: rgb(134,139,142);">Rock</span> 
+                <span style="color:antiquewhite">Paper</span> 
+                <span style="color: rgb(235,99,160)">Scissor!</span></em>
+                </h1>
+                <p class="subtext">First to 5 wins</p>
+            </header>
 
-        <div id="content">
-            <div class="score">
-                <p class="humanscore"> Human: <span class="h-runningscore"> 0 </span> </p>
-                <p class="compscore"> Comp: <span class="c-runningscore"> 0 </span> <p>
-            </div>
+            <div id="main">
+                <div class="score">
+                    <p class="humanscore"> You: <span class="h-runningscore"> 0 </span> </p>
+                    <p class="compscore"> Comp: <span class="c-runningscore"> 0 </span> </p>
+                </div>
 
-            <div class="buttons">
-                <button class="rock"> <i class="fa-solid fa-hand-back-fist"> </i> </button>
-                <button class="paper"><i class="fa-solid fa-hand"></i></button>
-                <button class="scissor"><i class="fa-solid fa-hand-scissors"></i></button>
-            </div>
+                <div class="buttons">
+                    <div class="playerButtons">
+                        <button class="rock"> <i class="fa-solid fa-hand-back-fist"> </i> </button>
+                        <button class="paper"><i class="fa-solid fa-hand"></i></button>
+                        <button class="scissor"><i class="fa-solid fa-hand-scissors"></i></button>
+                    </div>
+                    <div class="compButtons">
+                        <button class="comprock"> <i class="fa-solid fa-hand-back-fist"> </i> </button>
+                        <button class="comppaper"><i class="fa-solid fa-hand"></i></button>
+                        <button class="compscissor"><i class="fa-solid fa-hand-scissors"></i></button>
+                    </div>
+                </div>
 
-            <div class="result">
-                <p></p>
+                <div class="result">
+                    <p></p>
+                </div>
             </div>
+            <button class="reload">Play again?</button>        
+            <footer>
+                <p>HomeMade by Tushar
+                    <a href="https://github.com/PinkMoon25/rockPaperScissors_js"> 
+                    <i class="fa-brands fa-github"></i> 
+                    </a> 
+                </p>
+            </footer>
         </div>
-        <button class="reload">Play again?</button>        
-        <footer>
-            <p>HomeMade by Tushar @ 
-                <a href="https://github.com/PinkMoon25/rockPaperScissors_js"> 
-                <i class="fa-brands fa-github"></i> 
-                </a> 
-            </p>
-        </footer>
-
-        
     </body>
     </html>

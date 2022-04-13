@@ -7,18 +7,29 @@ const humanScore = document.querySelector(".h-runningscore");
 const compScore = document.querySelector(".c-runningscore");
 const result = document.querySelector(".result>p");
 const reloadBtn = document.querySelector(".reload");
+const compRockBtn = document.querySelector(".comprock");
+const compPaperBtn = document.querySelector(".comppaper");
+const compScissorBtn = document.querySelector(".compscissor");
+
+
 
 
 function computerPlay(){
     let num = Math.floor(Math.random() *3);
     switch(num){
         case 0:
+            compRockBtn.classList.add('compchoice');
+            setTimeout(()=> {compRockBtn.classList.remove('compchoice');}, 600);
             return "rock";
             break;
         case 1:
+            compPaperBtn.classList.add('compchoice');
+            setTimeout(()=> {compPaperBtn.classList.remove('compchoice');}, 600);
             return "paper";
             break;
         case 2:
+            compScissorBtn.classList.add('compchoice');
+            setTimeout(()=> {compScissorBtn.classList.remove('compchoice');}, 600);
             return "scissor";
             break;
     }
@@ -31,65 +42,55 @@ function game(playerSelection){
         case `rock, scissor`:
         case `scissor, paper`:
         case `paper, rock`:
-            result.innerHTML = `human chose 
-                                <span style="color: rgb(36,229,0)">
+            result.innerHTML = `<span style="color: rgb(36,229,0)">
                                 ${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1)}</span> 
-                                & beats comp's choice 
+                                beats
                                 <span style="color: rgb(228,61,64)">
                                 ${computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)}</span>`;
+            
+            playerScore++;
+            humanScore.innerText = playerScore;
+            compScore.innerText = computerScore;
             return "WIN";
             break;
         case `rock, paper`:
         case `paper, scissor`:
         case `scissor, rock`:
-            result.innerHTML = `human chose 
-                                <span style="color: rgb(228,61,64)">
+            result.innerHTML = `<span style="color: rgb(228,61,64)">
                                 ${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1)}</span>
-                                & lost to comp's choice 
+                                loses to
                                 <span style="color: rgb(36,229,0)">
                                 ${computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)}</span>`;
+            
+            computerScore++;
+            humanScore.innerText = playerScore;
+            compScore.innerText = computerScore;
             return "LOSE";
             break;
         case `rock, rock`:
         case `paper, paper`:
         case `scissor, scissor`:
-            result.innerHTML = `human chose 
-                                <span style="color: rgb(134,139,142)">
+            result.innerHTML = `<span style="color: rgb(134,139,142)">
                                 ${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1)}</span>
-                                & draws with comp's choice 
+                                draws with
                                 <span style="color: rgb(134,139,142)">
                                 ${computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)}</span>`;
+            
+            humanScore.innerText = playerScore;
+            compScore.innerText = computerScore;
+            
             return "DRAW";
             break;
     }
 
 }
 
-function updatescore(playerSelection){
-
-    switch(game(playerSelection)){
-        case "WIN":
-            playerScore++;
-            humanScore.innerText = playerScore;
-            compScore.innerText = computerScore;
-            break;
-        case "LOSE":
-            computerScore++;
-            humanScore.innerText = playerScore;
-            compScore.innerText = computerScore;
-            break;
-        case "DRAW":
-            humanScore.innerText = playerScore;
-            compScore.innerText = computerScore;
-            break;
-    }
-}
 
 function firsttofive(playerScore, computerScore){
     if(playerScore == 5 || computerScore == 5){
 
         if(playerScore > computerScore){
-            result.innerText = "You Win Human!";
+            result.innerText = "You Won!";
             result.style.color = "rgb(36,229,0)";
         }
         else if(computerScore > playerScore){
@@ -113,13 +114,16 @@ function end(){
         paperBtn.style.pointerEvents = "none";
         scissorBtn.style.pointerEvents = "none";
 
+        rockBtn.style.boxShadow = "none";
+        paperBtn.style.boxShadow = "none";
+        scissorBtn.style.boxShadow = "none";
+
         reloadBtn.style.visibility = "visible";
     }
 }
 
 let rockfn = function (){
     game("rock");
-    updatescore("rock");
     firsttofive(playerScore, computerScore)
     end();
    
@@ -127,14 +131,12 @@ let rockfn = function (){
 
 let paperfn = function (){
     game("paper");
-    updatescore("paper");
     firsttofive(playerScore, computerScore);
     end();
 
 };
 let scissorfn = function begin(){
     game("scissor");
-    updatescore("scissor");
     firsttofive(playerScore, computerScore)
     end();
  
