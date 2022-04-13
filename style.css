@@ -181,7 +181,7 @@ a{
     font-family: cursive, sans-serif;
     border-radius: 10px;
     padding: 10px;
-    margin: auto;
+    margin: 10px auto;
     background-color: cadetblue;
     transition: 0.3s ease;
 }
@@ -199,7 +199,6 @@ footer{
     font-style: italic;
     background-color: rgb(79 79 99 / 28%);
     width: 100%;
-    margin-top: auto;
 }
 
 
@@ -223,6 +222,15 @@ footer{
     }
     .reload{
         font-family: Roboto, sans-serif;
+    }
+    .buttons{
+        margin: 5% auto;
+    }
+    .compButtons{
+        padding: 5%;
+    }
+    .playerButtons{
+        padding: 5%;
     }
     
 }
